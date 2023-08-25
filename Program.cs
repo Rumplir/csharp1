@@ -16,7 +16,7 @@ namespace S09EP03
             Console.Write("Level (Junior/MidLevel/Senior): ");
             WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
             Console.Write("Base Salary: ");
-            double baseSalary = double.Parse(Console.ReadLine());
+            double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.Write("How many contracts to this worker? ");
             int qntContracts = int.Parse(Console.ReadLine());
 
@@ -44,7 +44,7 @@ namespace S09EP03
             int year = int.Parse(MAndY.Substring(3));
             Console.WriteLine($"Name: {worker.Name}");
             Console.WriteLine($"Department: {worker.Department.Name}");
-            Console.WriteLine($"Income for {MAndY}: {worker.Income(month, year)}");
+            Console.WriteLine($"Income for {MAndY}: {worker.Income(month, year):C2}");
         }
     }
 }
